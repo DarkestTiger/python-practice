@@ -1,29 +1,29 @@
 import random
 
+class RPSerror(Exception): pass
 
-sissor = '가위'
+pick = '가위', '바위', '보'
 
-rock = '바위'
+while True:
+    try:
+        com = random.choice(pick)
+        user = str(input(' 가위! 바위!! 보!!!: '))
 
-paper = '보'
-
-
-Rules = [sissor, rock, paper]
-
-computer = random.randint(0,2)
-
-user = int(input('| 가위 : 0, 바위 : 1, 보! : 2 | '))
-
-print("나의 선택 :  ")
-print(Rules[user])
-
-print("컴퓨터의 선택 :  ")
-print(Rules[computer])
-
-if computer == user :
-    print('비겼네요?')
-elif user - computer == -1 or (user == 2 and computer == 0) :
-    print('이겼습니다!')
-else:
-    print('졋습니다....ㅠㅠ')
-        
+        if user not in pick:
+            raise RPSerror
+        print(f'[You] ====> {user} vs {com} <=== [Computer] ')
+        if ((user == '가위' and  com == '보') or
+            (user == '바위' and  com == '가위') or
+            (user == '보' and  com == '바위')):
+            print('이겻어!')
+            break
+        elif ((user == '가위' and  com == '바위') or
+            (user == '바위' and  com == '보') or
+            (user == '보' and  com == '가위')):
+            print ('졋어!!')
+            break
+        else:
+            print ('비겻어!')
+            continue
+    except RPSerror:
+        print ('장난하냐? 애송이야! 가위 , 바위, 보 중에서만 낼 수 있어!')
