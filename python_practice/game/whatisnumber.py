@@ -8,12 +8,12 @@ def updown_game():
 
     while True:
         try:
-            a = int(input("숫자를 추측해보세요: "))
+            num = int(input("숫자를 추측해보세요: "))
             count += 1
 
-            if a < random_number:
+            if num < random_number:
                 print("업(Up)")
-            elif a > random_number:
+            elif num > random_number:
                 print("다운(Down)")
             else:
                 print(f"축하합니다! 숫자를 맞췄습니다. 정답은 {random_number}입니다.")
