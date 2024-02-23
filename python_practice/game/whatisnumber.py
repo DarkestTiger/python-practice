@@ -1,5 +1,7 @@
 import random
 
+class ValueError(Exception):pass
+
 def updown_game():
     random_number = random.randint(1, 100)
     count = 0
