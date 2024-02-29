@@ -21,7 +21,7 @@ while True:
             (user == '바위' and  com == '보') or
             (user == '보' and  com == '가위')):
             print ('졋어!!')
-            break
+            continue
         else:
             print ('비겻어!')
             continue
