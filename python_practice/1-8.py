@@ -12,3 +12,4 @@ def sum(num):
     return num * (num+1) // 2
 
 print(sum(10))
+
